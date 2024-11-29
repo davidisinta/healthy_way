@@ -28,7 +28,7 @@ embeddings = AzureOpenAIEmbeddings(
 vector_store = InMemoryVectorStore(embeddings)
 
 #load healthy living pattern doc -- refactor such that you can load multiple docs
-loader = PyPDFLoader("../documents/healthy_eating_pattern.pdf")
+loader = PyPDFLoader("documents/healthy_eating_pattern.pdf")
 
 docs = loader.load_and_split()
 
@@ -62,11 +62,17 @@ def generate(state: State):
     return {"answer": response.content}
 
 
-# Compile application and test
-graph_builder = StateGraph(State).add_sequence([retrieve, generate])
-graph_builder.add_edge(START, "retrieve")
-graph = graph_builder.compile()
+def chatbot_compile():
+    # Compile application and test
+    graph_builder = StateGraph(State).add_sequence([retrieve, generate])
+    graph_builder.add_edge(START, "retrieve")
+    graph = graph_builder.compile()
 
-response = graph.invoke({"question": "Whats in a healthy eating pattern?"})
-print(f"response is type {type(response)}")
-print(response["answer"])
+    return graph
+
+
+
+#
+# response = graph.invoke({"question": "Whats in a healthy eating pattern?"})
+# print(f"response is type {type(response)}")
+# print(response["answer"])

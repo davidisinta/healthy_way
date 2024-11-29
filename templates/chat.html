@@ -8,7 +8,7 @@
 </head>
 <body>
     <div id="chat-container">
-        <h1>Chat with our AI powered Copilot</h1>
+        <h1>Chat with our chatbot</h1>
         <div id="chat-box">
             <div id="messages"></div>
         </div>
@@ -38,7 +38,7 @@
 
             messages.scrollTop = messages.scrollHeight;
 
-            const response = await fetch('/v2/chat', {
+            const response = await fetch('/v1/chat', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -48,12 +48,14 @@
 
             const data = await response.json();
 
+            console.log(data);
+
             // Remove loader
             messages.removeChild(loader);
 
             const botMessage = document.createElement('div');
             botMessage.classList.add('message', 'bot');
-            botMessage.textContent = data.reply;
+            botMessage.textContent = data.message;
             messages.appendChild(botMessage);
 
             messageInput.value = '';
