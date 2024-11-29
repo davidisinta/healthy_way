@@ -67,12 +67,10 @@ def chatbot_compile():
     graph_builder = StateGraph(State).add_sequence([retrieve, generate])
     graph_builder.add_edge(START, "retrieve")
     graph = graph_builder.compile()
-
     return graph
 
-
-
-#
-# response = graph.invoke({"question": "Whats in a healthy eating pattern?"})
-# print(f"response is type {type(response)}")
-# print(response["answer"])
+if __name__ == "__main__":
+    graph = chatbot_compile()
+    response = graph.invoke({"question": "Whats in a healthy eating pattern?"})
+    print(f"response is type {type(response)}")
+    print(response["answer"])
