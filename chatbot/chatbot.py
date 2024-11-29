@@ -68,4 +68,5 @@ graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
 response = graph.invoke({"question": "Whats in a healthy eating pattern?"})
+print(f"response is type {type(response)}")
 print(response["answer"])
