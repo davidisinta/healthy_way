@@ -16,7 +16,7 @@ messages = [
     ),
     ("human", "I love programming."),
 ]
+
 ai_msg = llm.invoke(messages)
-ai_msg
 
 print(ai_msg.content)

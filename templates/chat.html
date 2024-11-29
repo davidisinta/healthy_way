@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="/static/chat.css">
+</head>
+<body>
+    <div id="chat-container">
+        <h1>Chat with our AI powered Copilot</h1>
+        <div id="chat-box">
+            <div id="messages"></div>
+        </div>
+        <form id="chat-form">
+            <input type="text" id="message-input" name="message" placeholder="Type your message here..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('chat-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const messageInput = document.getElementById('message-input');
+            const message = messageInput.value;
+
+            const messages = document.getElementById('messages');
+            const userMessage = document.createElement('div');
+            userMessage.classList.add('message', 'user');
+            userMessage.textContent = `${message}`;
+            messages.appendChild(userMessage);
+
+            // Add loader
+            const loader = document.createElement('div');
+            loader.classList.add('message', 'bot');
+            loader.innerHTML = '<div class="loader">...</div>';
+            messages.appendChild(loader);
+
+            messages.scrollTop = messages.scrollHeight;
+
+            const response = await fetch('/v2/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: message })
+            });
+
+            const data = await response.json();
+
+            // Remove loader
+            messages.removeChild(loader);
+
+            const botMessage = document.createElement('div');
+            botMessage.classList.add('message', 'bot');
+            botMessage.textContent = data.reply;
+            messages.appendChild(botMessage);
+
+            messageInput.value = '';
+            messages.scrollTop = messages.scrollHeight;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot API Documentation</title>
+   <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a class="glare-button" href="/demo/chat">Live Demo Chat</a></li>
+            </ul>
+        </nav>
+        <h1>Welcome to Zeraki's Chatbot API</h1>
+    </header>
+    <main>
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>This API provides access to Zeraki's powerful chatbot. It is knowledgeable on Zeraki's services.
+                You can integrate it into your applications to enable natural language interactions with users.
+            </p>
+        </section>
+        <section id="usage">
+            <h2>Usage</h2>
+            <p>To use this API, you need to make HTTP requests to the following endpoints:</p>
+            <ul>
+                <li><code>POST /v2/chat</code> - Send a message to the chatbot and receive a response.</li>
+            </ul>
+        </section>
+        <section id="example">
+            <h2>Example</h2>
+            <p>Here is an example of how to interact with the chatbot endpoint:</p>
+            <pre><code>
+curl -X POST "https://zerakicopilotapp.azurewebsites.net//v2/chat" \
+     -H "Content-Type: application/json" \
+     -d '{
+           "text": "hello there!!"
+         }'
+
+
+            </code></pre>
+            <p>Response:</p>
+            <pre><code>
+                {
+                    "documents":[],
+                    "reply":"Hello! How can I assist you today?"
+                }
+
+            </code></pre>
+        </section>
+    </main>
+    <footer>
+    </footer>
+</body>
+</html>

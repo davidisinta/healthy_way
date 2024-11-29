@@ -1,15 +1,8 @@
-
-#standard libraries
-
-
 #third party libraries
-from langchain_openai import AzureChatOpenAI
 from langchain_openai import AzureOpenAIEmbeddings
 from langchain_core.vectorstores import InMemoryVectorStore
 from dotenv import load_dotenv
-import bs4
 from langchain import hub
-from langchain_community.document_loaders import WebBaseLoader
 from langchain_core.documents import Document
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import START, StateGraph
@@ -17,7 +10,7 @@ from typing_extensions import List, TypedDict
 from langchain_openai import AzureChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader # for loading pdf files
 
-load_dotenv()
+load_dotenv() # load environment variables
 
 llm = AzureChatOpenAI(
     azure_deployment="gpt-4",  # or your deployment
@@ -34,30 +27,16 @@ embeddings = AzureOpenAIEmbeddings(
 
 vector_store = InMemoryVectorStore(embeddings)
 
-
-
-# Load and chunk contents of the blog
-# loader = WebBaseLoader(
-#     web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
-#     bs_kwargs=dict(
-#         parse_only=bs4.SoupStrainer(
-#             class_=("post-content", "post-title", "post-header")
-#         )
-#     ),
-# )
-
 #load healthy living pattern doc -- refactor such that you can load multiple docs
 loader = PyPDFLoader("../documents/healthy_eating_pattern.pdf")
+
 docs = loader.load_and_split()
-
-
-# docs = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 all_splits = text_splitter.split_documents(docs)
 
 # Index chunks
-_ = vector_store.add_documents(documents=all_splits)
+vector_store.add_documents(documents=all_splits)
 
 # Define prompt for question-answering
 prompt = hub.pull("rlm/rag-prompt")
