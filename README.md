@@ -15,7 +15,7 @@ The AI-Powered Diet Assistant is a web application that:
 This project bridges a gap between health-conscious individuals and quick, AI-driven dietary insights. It enables users to understand and improve their eating habits with minimal effort, fostering healthier lifestyles.  
 
 ### How  
-- **Chatbot**: Built with Retrieval-Augmented Generation (RAG) using the LlamaIndex framework and Azure OpenAI.  
+- **Chatbot**: Built with Retrieval-Augmented Generation (RAG) using the Langchain framework and Azure OpenAI.  
 - **Image Classifier**: A convolutional neural network (CNN) trained on diverse food datasets to analyze and rate food healthiness.  
 
 ---
