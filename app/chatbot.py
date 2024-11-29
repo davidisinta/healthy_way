@@ -15,6 +15,7 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langgraph.graph import START, StateGraph
 from typing_extensions import List, TypedDict
 from langchain_openai import AzureChatOpenAI
+from langchain_community.document_loaders import PyPDFLoader # for loading pdf files
 
 load_dotenv()
 
@@ -36,15 +37,21 @@ vector_store = InMemoryVectorStore(embeddings)
 
 
 # Load and chunk contents of the blog
-loader = WebBaseLoader(
-    web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
-    bs_kwargs=dict(
-        parse_only=bs4.SoupStrainer(
-            class_=("post-content", "post-title", "post-header")
-        )
-    ),
-)
-docs = loader.load()
+# loader = WebBaseLoader(
+#     web_paths=("https://lilianweng.github.io/posts/2023-06-23-agent/",),
+#     bs_kwargs=dict(
+#         parse_only=bs4.SoupStrainer(
+#             class_=("post-content", "post-title", "post-header")
+#         )
+#     ),
+# )
+
+#load healthy living pattern doc -- refactor such that you can load multiple docs
+loader = PyPDFLoader("../documents/healthy_eating_pattern.pdf")
+docs = loader.load_and_split()
+
+
+# docs = loader.load()
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=200)
 all_splits = text_splitter.split_documents(docs)
@@ -81,5 +88,5 @@ graph_builder = StateGraph(State).add_sequence([retrieve, generate])
 graph_builder.add_edge(START, "retrieve")
 graph = graph_builder.compile()
 
-response = graph.invoke({"question": "What is Task Decomposition?"})
+response = graph.invoke({"question": "Whats in a healthy eating pattern?"})
 print(response["answer"])
