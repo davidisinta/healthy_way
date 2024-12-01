@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f7fa;
+    color: #333;
+}
+
+header {
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+    background-color: #007bff;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #007bff;
+}
+
+nav ul li {
+    float: right;
+}
+
+nav ul li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: white;
+}
+
+h2 {
+    color: #333;
+}
+
+pre {
+    background-color: #eee;
+    padding: 10px;
+    border-left: 3px solid #007bff;
+}
+
+.glare-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.glare-button::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    opacity: 0;
+}
+
+.glare-button:hover::before {
+    animation: glare 1s ease-in-out;
+}
+
+@keyframes glare {
+    0% {
+        top: -50%;
+        left: -50%;
+        opacity: 0;
+    }
+    50% {
+        top: 50%;
+        left: 50%;
+        opacity: 1;
+    }
+    100% {
+        top: 150%;
+        left: 150%;
+        opacity: 0;
+    }
+}
+
+.glare-button {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
