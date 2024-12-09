@@ -13,7 +13,7 @@
 ## Introduction  
 
 ### Overview  
-The AI-Powered Diet Assistant is a web application designed to provide users with personalized nutrition guidance. By combining cutting-edge AI technologies, this tool empowers individuals to make healthier dietary choices with minimal effort. Its primary features include a chatbot for answering diet-related queries and a food classifier that identifies food items based on fine-tuned AI models.  
+Healthy Way is an AI-Powered Diet Assistant designed to provide users with personalized nutrition guidance. By combining cutting-edge AI technologies, this tool empowers individuals to make healthier dietary choices with minimal effort. Its primary features include a chatbot for answering diet-related queries and a food classifier that identifies food items based on fine-tuned AI models.  
 
 ### Significance  
 With increasing awareness of the importance of healthy eating, there is a growing demand for tools that simplify nutritional planning. The AI-Powered Diet Assistant bridges this gap by offering an accessible, AI-driven approach to understanding dietary habits and fostering a healthier lifestyle.  
@@ -26,10 +26,10 @@ With increasing awareness of the importance of healthy eating, there is a growin
    - Offers reliable and customized answers to diet and nutrition questions.  
 2. **Food Classifier**:  
    - Utilizes a fine-tuned ResNet50 model to classify food items into 4 categories.  
-   - Training Time: Approximately 4 hours for the chosen dataset.  
+   - Training Time: Approximately 9 hours for the chosen dataset.  
 
 ### Results  
-1. **Chatbot**: Successfully answers user queries, providing dietary recommendations and clarifying which foods are healthy.  
+1. **Chatbot**: Successfully answers user queries, providing dietary recommendations.  
 2. **Food Classifier**: Accurately identifies and categorizes food items into the predefined classes.  
 
 #### Sample Output  
