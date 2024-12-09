@@ -7,8 +7,7 @@
 - [Introduction](#introduction)  
 - [Methods and Results](#methods-and-results)  
 - [Discussion](#discussion)  
-- [Interactive Elements](#interactive-elements)  
-- [Technical Risks and Mitigations](#technical-risks-and-mitigations)  
+- [Interactive Elements](#interactive-elements)   
 
 ## Introduction  
 
@@ -50,29 +49,16 @@ With increasing awareness of the importance of healthy eating, there is a growin
 1. **Chatbot Hallucinations**:  
    - Mitigation: Implemented strict domain filtering and rigorous testing with diverse queries.  
 2. **Compute Limitations for Training**:  
-   - Training the ResNet50 for 4 food categories required 4 hours. Scaling up to hundreds of categories would require significantly more resources. To address this, the project focuses on a smaller classification task while leveraging the chatbot's broader dietary insights.  
-3. **Deployment Challenges**:  
-   - Mitigation: Leveraged Docker for seamless deployment and scalability.  
+   - Training the ResNet50 for 4 food categories required 9 hours. Scaling up to hundreds of categories would require significantly more resources. To address this, the project focuses on a smaller classification task while leveraging the chatbot's broader dietary insights.  
 
 ### Lessons Learned  
-- Fine-tuning existing models like ResNet50 saves time and resources compared to building models from scratch.  
-- Containerization significantly simplifies the deployment process for AI-driven web applications.  
+- Identifying bottlenecks like compute power early could be useful to help determine the scope of the project. 
 
 ### Future Work  
-- Expanding the food classifier to support additional categories.  
-- Enhancing the chatbot's contextual understanding to provide even more personalized recommendations.  
-- Integrating a mobile application for on-the-go dietary guidance.  
+- Using a more advance pretrained image classifier to offload the work of having to fine tune a model significantly and just focus on rating the foods based on their categories. 
+- Adding more data to the model so that it has more information to pull from when answering users diet related questions.
 
 ## Interactive Elements  
 
 ### Deployment Link  
 The AI-Powered Diet Assistant is live and accessible here: [Healthy Way Deployment](https://healthywayapp3.azurewebsites.net/).  
-
-## Technical Risks and Mitigations  
-
-1. **Chatbot Hallucinations**:  
-   - Mitigation: Implement strict domain filtering and test the chatbot with varied queries.  
-2. **Compute Requirements for Training**:  
-   - To train a ResNet50 for 4 different classes of food, it took approximately 4 hours. Training for hundreds of categories would be computationally expensive, so the project focuses on a smaller classification task while leveraging the chatbot for broader dietary guidance.  
-3. **Deployment Challenges**:  
-   - Mitigation: Use containerization (Docker) for seamless deployment and scalability.  
