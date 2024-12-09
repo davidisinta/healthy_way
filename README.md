@@ -9,7 +9,7 @@
 - [Introduction](#introduction)  
 - [Methods and Results](#methods-and-results)  
 - [Discussion](#discussion)  
-- [Optional Interactive Elements](#optional-interactive-elements)  
+- [Interactive Elements](#interactive-elements)  
 - [Development Plan](#development-plan)  
 - [Technical Risks and Mitigations](#technical-risks-and-mitigations)  
 
@@ -71,10 +71,10 @@ With increasing awareness of the importance of healthy eating, there is a growin
 
 ---
 
-## Optional Interactive Elements  
+## Interactive Elements  
 
 ### Deployment Link  
-The AI-Powered Diet Assistant is live and accessible here: [AI-Powered Diet Assistant Deployment](https://healthywayapp3.azurewebsites.net/).  
+The AI-Powered Diet Assistant is live and accessible here: [Healthy Way Deployment](https://healthywayapp3.azurewebsites.net/).  
 
 ---
 
