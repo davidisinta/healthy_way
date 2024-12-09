@@ -2,8 +2,6 @@
 
 ## Author: David Nyakawa  
 
----
-
 ## Table of Contents  
 
 - [Introduction](#introduction)  
@@ -13,8 +11,6 @@
 - [Development Plan](#development-plan)  
 - [Technical Risks and Mitigations](#technical-risks-and-mitigations)  
 
----
-
 ## Introduction  
 
 ### Overview  
@@ -22,8 +18,6 @@ The AI-Powered Diet Assistant is a web application designed to provide users wit
 
 ### Significance  
 With increasing awareness of the importance of healthy eating, there is a growing demand for tools that simplify nutritional planning. The AI-Powered Diet Assistant bridges this gap by offering an accessible, AI-driven approach to understanding dietary habits and fostering a healthier lifestyle.  
-
----
 
 ## Methods and Results  
 
@@ -48,8 +42,6 @@ With increasing awareness of the importance of healthy eating, there is a growin
   Input: Image of an apple  
   Output: _"Classified as Fruit."_  
 
----
-
 ## Discussion  
 
 ### Challenges  
@@ -69,21 +61,15 @@ With increasing awareness of the importance of healthy eating, there is a growin
 - Enhancing the chatbot's contextual understanding to provide even more personalized recommendations.  
 - Integrating a mobile application for on-the-go dietary guidance.  
 
----
-
 ## Interactive Elements  
 
 ### Deployment Link  
 The AI-Powered Diet Assistant is live and accessible here: [Healthy Way Deployment](https://healthywayapp3.azurewebsites.net/).  
 
----
-
 ## Development Plan  
 
 ### MVP (Minimum Viable Product)  
 - **Chatbot**: Answers general diet and nutrition-related questions.  
-
----
 
 ## Technical Risks and Mitigations  
 
