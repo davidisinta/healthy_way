@@ -66,11 +66,6 @@ With increasing awareness of the importance of healthy eating, there is a growin
 ### Deployment Link  
 The AI-Powered Diet Assistant is live and accessible here: [Healthy Way Deployment](https://healthywayapp3.azurewebsites.net/).  
 
-## Development Plan  
-
-### MVP (Minimum Viable Product)  
-- **Chatbot**: Answers general diet and nutrition-related questions.  
-
 ## Technical Risks and Mitigations  
 
 1. **Chatbot Hallucinations**:  
