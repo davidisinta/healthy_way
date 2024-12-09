@@ -66,3 +66,54 @@ The AI-Powered Diet Assistant is live and accessible here: [Healthy Way Deployme
 
 
 ## Running Locally 
+
+### 0. Note
+
+This chatbot uses Azure Open AI's GPT-4 base model and you will need a deployment for this model on Azure to be able to use the chatbot and run the app locally. Without this deployments your application will be unable to run. If you want to see a demo of the app, I suggest you use my deployed version [here](https://healthywayapp3.azurewebsites.net/). Otherwise if you are checking out this repo for development purposes, feel free to deploy the Azure resources and set up the necessary API keys to integrate with the application locally for development.
+
+### 1. Clone the Repository
+
+Clone this repository using the following command:
+
+```bash
+git clone https://github.com/davidisinta/healthy_way
+```
+
+### 2. Navigate to the Project Directory
+
+```bash
+cd healthy_way
+```
+
+### 3. Set Up a Virtual Environment
+
+for macOS/Linux:
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+for Windows:
+```bash
+python -m venv venv
+.\venv\Scripts\activate
+```
+
+### 4. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Running the Application
+
+```bash
+uvicorn main:app --reload
+```
+
+
+
+
+
+
+
