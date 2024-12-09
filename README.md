@@ -8,7 +8,6 @@
 - [Methods and Results](#methods-and-results)  
 - [Discussion](#discussion)  
 - [Interactive Elements](#interactive-elements)  
-- [Development Plan](#development-plan)  
 - [Technical Risks and Mitigations](#technical-risks-and-mitigations)  
 
 ## Introduction  
