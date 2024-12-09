@@ -7,7 +7,8 @@
 - [Introduction](#introduction)  
 - [Methods and Results](#methods-and-results)  
 - [Discussion](#discussion)  
-- [Interactive Elements](#interactive-elements)   
+- [Interactive Elements](#interactive-elements)
+- [Running Locally](#running-locally)
 
 ## Introduction  
 
