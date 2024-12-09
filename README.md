@@ -35,11 +35,14 @@ With increasing awareness of the importance of healthy eating, there is a growin
 #### Sample Output  
 - **Chatbot Example**:  
   _"What are some healthy snack options?"_  
-  _Response: "Here are a few options: almonds, Greek yogurt, apple slices with peanut butter."_  
+  _Response: "Some healthy snack options include whole fruits, nuts, seeds, low-fat dairy products like yogurt and cheese, and vegetables. You can also consider whole grains, legumes such as beans and peas, and protein-rich foods like seafood, lean meats, and soy products. It's beneficial to eat a variety of these options to ensure a range of nutrients."_  
 
 - **Food Classifier Example**:  
   Input: Image of an apple  
-  Output: _"Classified as Fruit."_  
+  Output: _"Classified as Fruit."_
+  [Check out the jupyter notebook](https://healthywayapp3.azurewebsites.net/).  
+  
+  
 
 ## Discussion  
 
