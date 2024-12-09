@@ -74,7 +74,7 @@ With increasing awareness of the importance of healthy eating, there is a growin
 ## Optional Interactive Elements  
 
 ### Deployment Link  
-The AI-Powered Diet Assistant is live and accessible here: [AI-Powered Diet Assistant Deployment](#).  
+The AI-Powered Diet Assistant is live and accessible here: [AI-Powered Diet Assistant Deployment](healthywayapp3.azurewebsites.net).  
 
 ---
 
